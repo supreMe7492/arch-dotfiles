@@ -1,38 +1,50 @@
-# My Arch Dotfiles Setup
+# Arch Dotfiles
 
-This repository contains my personal Arch Linux configuration files for **Hyprland**, **Rofi**, **Kitty**, **Neovim**, **Starship**, and other tools I use daily.
+This repository contains my personal dotfiles for **Hyprland**, **Neovim**, **kitty**, **Rofi**, **Starship**, **Waypaper**, and custom scripts like **floatpopup**.
 
-> ⚠️ Most of these configs are copied/adapted from awesome sources, with a few custom tweaks like shortcuts and appearance changes.
+> ⚠️ Most of these configs are adapted from existing sources.  
+> Hyprland setup copied from: [Hyprpine Dots](https://github.com/alokftww/hyprpine-dots)  
+> SDDM theme copied from: [Astronaut Theme](https://github.com/Keyitdev/sddm-astronaut-theme)
+
+---
+
+## Setup
+
+Clone this repository:
+
+    git clone https://github.com/supreMe7492/arch-dotfiles.git
+    cd arch-dotfiles
+
+Stow the configurations to your home directory:
+
+    stow hypr
+    stow kitty
+    stow nvim
+    stow rofi
+    stow starship
+    stow waypaper
+    stow floatpopup
+
+> ⚠️ Skip or modify any `stow` commands for configs you don’t want to use.
 
 ---
 
 ## Screenshots
 
-Here are some screenshots of my setup:
-
-![Hyprland Screenshot 1](pictures/Screenshot-2025-08-26_18:07:04.png)  
-![Hyprland Screenshot 2](pictures/Screenshot-2025-08-26_18:07:46.png)  
-![Hyprland Screenshot 3](pictures/Screenshot-2025-08-26_18:07:58.png)
-
-> Login screen configured with SDDM using the Astronaut theme: [SDDM Astronaut Theme](https://github.com/Keyitdev/sddm-astronaut-theme)
+![Hyprland](pictures/Screenshot-2025-08-26_18:07:04.png)  
+![Neovim](pictures/Screenshot-2025-08-26_18:07:46.png)  
+![Rofi](pictures/Screenshot-2025-08-26_18:07:58.png)
 
 ---
 
-## Config Sources
+## Notes
 
-- **Hyprland + Colorscheme + Animations:** [Hyprpine Dots](https://github.com/alokftww/hyprpine-dots/tree/main)
-- **SDDM Login Screen Theme:** [Astronaut Theme](https://github.com/Keyitdev/sddm-astronaut-theme)
+- Some files/scripts are copied as-is from other sources, with minor modifications (mostly shortcuts or tweaks).
+- I do **not** stow my SDDM setup; see the link above if you want it.
+- Floatpopup and Waypaper scripts are included; they require proper permissions (`chmod +x`) to run.
 
 ---
 
-## How to Use / Transfer to Another Device
+## License
 
-I use [`stow`](https://www.gnu.org/software/stow/) to manage my dotfiles. To transfer or set up on a new device:
-
-1. Clone the repository:
-   ```bash
-      git clone git@github.com:supreMe7492/arch-dotfiles.git ~/dotfiles
-         cd ~/dotfiles
-
-   ```
-
+You can copy or adapt these configs for personal use. No warranty—use at your own risk.
