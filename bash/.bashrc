@@ -16,27 +16,42 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 
+
+
 c_run() {
     if [ $# -eq 0 ]; then
+        echo
         echo "Usage: c_run file1.c [file2.c ...]"
+        echo
         return 1
     fi
 
-    # Use first file name as output binary
     first="$1"
     output="${first%.c}"
 
-    # If multiple files, compile them all
+    echo       # blank line before compilation
+    echo "Compiling $*..."
+    echo       # another blank line
+
     gcc -std=c17 -Wall -Wextra "$@" -o "$output"
 
     if [ $? -ne 0 ]; then
-        echo "Compilation failed. Check errors above."
+        echo       # blank line after errors
+        echo "Compilation failed."
+        echo
         return 1
     fi
 
-    echo "Compilation succeeded. Running $output..."
+    echo       # blank line before running
+    echo "Running $output..."
+    echo
+
     ./"$output"
+
+    echo       # blank line after program output
 }
+
+
 PS1='[\u@\h \W]\$ '
 neofetch
 export PATH="$HOME/.local/bin:$PATH"
