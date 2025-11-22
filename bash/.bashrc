@@ -14,6 +14,29 @@ export XDG_ICON_THEME="Papirus"  # Replace with the theme you are using
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+
+
+c_run() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: c_run file1.c [file2.c ...]"
+        return 1
+    fi
+
+    # Use first file name as output binary
+    first="$1"
+    output="${first%.c}"
+
+    # If multiple files, compile them all
+    gcc -std=c17 -Wall -Wextra "$@" -o "$output"
+
+    if [ $? -ne 0 ]; then
+        echo "Compilation failed. Check errors above."
+        return 1
+    fi
+
+    echo "Compilation succeeded. Running $output..."
+    ./"$output"
+}
 PS1='[\u@\h \W]\$ '
 neofetch
 export PATH="$HOME/.local/bin:$PATH"

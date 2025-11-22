@@ -30,3 +30,8 @@ vim.cmd([[set shortmess+=A]])
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("data") .. "/undo//"
 vim.opt.termguicolors = true
+vim.filetype.add({
+	extension = {
+		ejs = "html",
+	},
+})
