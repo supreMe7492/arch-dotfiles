@@ -43,7 +43,7 @@ c_run() {
     fi
 
     echo       # blank line before running
-    echo "Running $output..."
+    echo "Output:"
     echo
 
     ./"$output"
